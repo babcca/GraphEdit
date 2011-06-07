@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Editor Grafu: Zdrojový soubor src/modules/io/raw.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generováno programem Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Hledat');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editor Grafu</div>
+   <div id="projectbrief">Editor Grafu</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hlavní&#160;stránka</span></a></li>
+      <li><a href="namespaces.html"><span>Prostory&#160;jmen</span></a></li>
+      <li><a href="annotated.html"><span>Třídy</span></a></li>
+      <li class="current"><a href="files.html"><span>Soubory</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Hledat" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Seznam&#160;souborů</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>src/modules/io/raw.h</h1>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef RAW_H__</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define RAW_H__</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span><span class="preprocessor">#include &quot;interfaces.h&quot;</span>
+<a name="l00004"></a>00004 
+<a name="l00005"></a><a class="code" href="struct_raw_exporter.html">00005</a> <span class="keyword">struct </span><a class="code" href="struct_raw_exporter.html">RawExporter</a> : <span class="keyword">public</span> Interfaces::IExporter {
+<a name="l00006"></a>00006         <a class="code" href="struct_raw_exporter.html">RawExporter</a>() : IExporter(<span class="stringliteral">&quot;RawExporter&quot;</span>, <span class="stringliteral">&quot;Import plain text graph&quot;</span>, <span class="stringliteral">&quot;Graph Files (*.pgrp)&quot;</span>) {}
+<a name="l00007"></a>00007         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_raw_exporter.html#aa35d7264f1f4e53a046d7f18000a044d" title="Ulozi graf do souboru.">save_to_file</a>(std::string &amp; filename, <span class="keyword">const</span> Graph::Graph &amp; graph) <span class="keyword">const</span>;
+<a name="l00008"></a>00008 };
+<a name="l00009"></a>00009 
+<a name="l00010"></a><a class="code" href="struct_raw_importer.html">00010</a> <span class="keyword">struct </span><a class="code" href="struct_raw_importer.html">RawImporter</a> : <span class="keyword">public</span> Interfaces::IImporter {
+<a name="l00011"></a>00011         <a class="code" href="struct_raw_importer.html">RawImporter</a>() : IImporter(<span class="stringliteral">&quot;RawImporter&quot;</span>, <span class="stringliteral">&quot;Import plain text graph&quot;</span>, <span class="stringliteral">&quot;Graph Files (*.pgrp)&quot;</span>) {
+<a name="l00012"></a>00012         }
+<a name="l00013"></a>00013         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_raw_importer.html#ad0eef57b5136863b5993ad147fc977e3" title="Nacteni grafu ze souboru.">load_from_file</a>(std::string &amp; filename, Graph::Graph &amp; graph) <span class="keyword">const</span>;
+<a name="l00014"></a>00014 };
+<a name="l00015"></a>00015 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Vše</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Třídy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Prostory jmen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funkce</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Proměnné</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Definice typů</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generováno út 7. čer 2011 22.33:39 pro projekt Editor Grafu programem&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Editor Grafu: Zdrojový soubor src/interfaces/interfaces.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generováno programem Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Hledat');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editor Grafu</div>
+   <div id="projectbrief">Editor Grafu</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hlavní&#160;stránka</span></a></li>
+      <li><a href="namespaces.html"><span>Prostory&#160;jmen</span></a></li>
+      <li><a href="annotated.html"><span>Třídy</span></a></li>
+      <li class="current"><a href="files.html"><span>Soubory</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Hledat" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Seznam&#160;souborů</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>src/interfaces/interfaces.h</h1>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef INTERFACES_H__</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define INTERFACES_H__</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span><span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;fstream&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &quot;graph.h&quot;</span>
+<a name="l00009"></a><a class="code" href="namespace_interfaces.html">00009</a> <span class="keyword">namespace </span>Interfaces {
+<a name="l00013"></a><a class="code" href="struct_interfaces_1_1_i_module.html">00013</a>         <span class="keyword">struct </span><a class="code" href="struct_interfaces_1_1_i_module.html" title="Inteface pro moduly.">IModule</a> {
+<a name="l00014"></a>00014                 <a class="code" href="struct_interfaces_1_1_i_module.html" title="Inteface pro moduly.">IModule</a>(<span class="keyword">const</span> std::string &amp; name_) : <a class="code" href="struct_interfaces_1_1_i_module.html#a168da49a50a1aa26ab07f57c6eeb52ec">name</a>(name_) {}
+<a name="l00015"></a>00015                 <span class="keyword">virtual</span> ~<a class="code" href="struct_interfaces_1_1_i_module.html" title="Inteface pro moduly.">IModule</a>() {}
+<a name="l00016"></a><a class="code" href="struct_interfaces_1_1_i_module.html#a168da49a50a1aa26ab07f57c6eeb52ec">00016</a>                 <span class="keyword">const</span> std::string <a class="code" href="struct_interfaces_1_1_i_module.html#a168da49a50a1aa26ab07f57c6eeb52ec">name</a>; 
+<a name="l00017"></a>00017         };
+<a name="l00021"></a><a class="code" href="struct_interfaces_1_1_i_menu.html">00021</a>         <span class="keyword">struct </span><a class="code" href="struct_interfaces_1_1_i_menu.html" title="Interface pro zacleneni polozky do menu.">IMenu</a> {
+<a name="l00022"></a>00022                 <a class="code" href="struct_interfaces_1_1_i_menu.html" title="Interface pro zacleneni polozky do menu.">IMenu</a>(<span class="keyword">const</span> std::string &amp; menuName_, <span class="keyword">const</span> std::string &amp; extensions_) : <a class="code" href="struct_interfaces_1_1_i_menu.html#ad3c956e9fd76a0d63b84e9afbee58721" title="Zobrazovany nazev v menu.">menuName</a>(menuName_), <a class="code" href="struct_interfaces_1_1_i_menu.html#abe6792696e5de498653ee22ad9de4055" title="Jake je typ koncovky u souboru.">extensions</a>(extensions_) {}
+<a name="l00023"></a><a class="code" href="struct_interfaces_1_1_i_menu.html#ad3c956e9fd76a0d63b84e9afbee58721">00023</a>                 <span class="keyword">const</span> std::string <a class="code" href="struct_interfaces_1_1_i_menu.html#ad3c956e9fd76a0d63b84e9afbee58721" title="Zobrazovany nazev v menu.">menuName</a>; 
+<a name="l00024"></a><a class="code" href="struct_interfaces_1_1_i_menu.html#abe6792696e5de498653ee22ad9de4055">00024</a>                 <span class="keyword">const</span> std::string <a class="code" href="struct_interfaces_1_1_i_menu.html#abe6792696e5de498653ee22ad9de4055" title="Jake je typ koncovky u souboru.">extensions</a>; 
+<a name="l00026"></a>00026         };
+<a name="l00027"></a>00027 
+<a name="l00031"></a><a class="code" href="struct_interfaces_1_1_i_exporter.html">00031</a>         <span class="keyword">struct </span><a class="code" href="struct_interfaces_1_1_i_exporter.html" title="Interface pro exportery grafu.">IExporter</a> : <span class="keyword">public</span> <a class="code" href="struct_interfaces_1_1_i_module.html" title="Inteface pro moduly.">IModule</a>, <a class="code" href="struct_interfaces_1_1_i_menu.html" title="Interface pro zacleneni polozky do menu.">IMenu</a> {
+<a name="l00032"></a>00032                 <span class="keyword">virtual</span> ~<a class="code" href="struct_interfaces_1_1_i_exporter.html" title="Interface pro exportery grafu.">IExporter</a>() {}
+<a name="l00033"></a>00033                 <a class="code" href="struct_interfaces_1_1_i_exporter.html" title="Interface pro exportery grafu.">IExporter</a>(<span class="keyword">const</span> std::string &amp; <a class="code" href="struct_interfaces_1_1_i_module.html#a168da49a50a1aa26ab07f57c6eeb52ec">name</a>, <span class="keyword">const</span> std::string &amp; <a class="code" href="struct_interfaces_1_1_i_menu.html#ad3c956e9fd76a0d63b84e9afbee58721" title="Zobrazovany nazev v menu.">menuName</a>, <span class="keyword">const</span> std::string &amp; <a class="code" href="struct_interfaces_1_1_i_menu.html#abe6792696e5de498653ee22ad9de4055" title="Jake je typ koncovky u souboru.">extensions</a>)
+<a name="l00034"></a>00034                         : <a class="code" href="struct_interfaces_1_1_i_module.html" title="Inteface pro moduly.">IModule</a>(name), <a class="code" href="struct_interfaces_1_1_i_menu.html" title="Interface pro zacleneni polozky do menu.">IMenu</a>(menuName, extensions) {}
+<a name="l00041"></a>00041                 <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_interfaces_1_1_i_exporter.html#ac46be981ab9ccb940d4c1a1b2880daab" title="Ulozi graf do souboru.">save_to_file</a>(std::string &amp; filename, <span class="keyword">const</span> Graph::Graph &amp; graph) <span class="keyword">const</span> = 0;
+<a name="l00042"></a>00042         };
+<a name="l00046"></a><a class="code" href="struct_interfaces_1_1_i_importer.html">00046</a>         <span class="keyword">struct </span><a class="code" href="struct_interfaces_1_1_i_importer.html" title="Interface pro importery.">IImporter</a> : <span class="keyword">public</span> <a class="code" href="struct_interfaces_1_1_i_module.html" title="Inteface pro moduly.">IModule</a>, <a class="code" href="struct_interfaces_1_1_i_menu.html" title="Interface pro zacleneni polozky do menu.">IMenu</a> {
+<a name="l00047"></a>00047                 <a class="code" href="struct_interfaces_1_1_i_importer.html" title="Interface pro importery.">IImporter</a>(<span class="keyword">const</span> std::string &amp; <a class="code" href="struct_interfaces_1_1_i_module.html#a168da49a50a1aa26ab07f57c6eeb52ec">name</a>, <span class="keyword">const</span> std::string &amp; <a class="code" href="struct_interfaces_1_1_i_menu.html#ad3c956e9fd76a0d63b84e9afbee58721" title="Zobrazovany nazev v menu.">menuName</a>, <span class="keyword">const</span> std::string &amp; <a class="code" href="struct_interfaces_1_1_i_menu.html#abe6792696e5de498653ee22ad9de4055" title="Jake je typ koncovky u souboru.">extensions</a>) 
+<a name="l00048"></a>00048                         : <a class="code" href="struct_interfaces_1_1_i_module.html" title="Inteface pro moduly.">IModule</a>(name), <a class="code" href="struct_interfaces_1_1_i_menu.html" title="Interface pro zacleneni polozky do menu.">IMenu</a>(menuName, extensions) {}
+<a name="l00049"></a>00049                 <span class="keyword">virtual</span> ~<a class="code" href="struct_interfaces_1_1_i_importer.html" title="Interface pro importery.">IImporter</a>() {}
+<a name="l00056"></a>00056                 <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="struct_interfaces_1_1_i_importer.html#ae72e939f67320f85b6893aea8105e877" title="Nacteni grafu ze souboru.">load_from_file</a>(std::string &amp; filename, Graph::Graph &amp; graph) <span class="keyword">const</span> = 0;
+<a name="l00057"></a>00057         };
+<a name="l00061"></a><a class="code" href="struct_interfaces_1_1_i_placement.html">00061</a>         <span class="keyword">struct </span><a class="code" href="struct_interfaces_1_1_i_placement.html" title="Interface pro moduly starajici se o rozmisteni vrcholu.">IPlacement</a> : <span class="keyword">public</span> <a class="code" href="struct_interfaces_1_1_i_module.html" title="Inteface pro moduly.">IModule</a> {
+<a name="l00062"></a>00062         };
+<a name="l00066"></a><a class="code" href="struct_interfaces_1_1_i_extensions.html">00066</a>         <span class="keyword">struct </span><a class="code" href="struct_interfaces_1_1_i_extensions.html" title="Interface pro rozsireni.">IExtensions</a> : <span class="keyword">public</span> <a class="code" href="struct_interfaces_1_1_i_module.html" title="Inteface pro moduly.">IModule</a> {
+<a name="l00067"></a>00067         };
+<a name="l00068"></a>00068 };
+<a name="l00069"></a>00069 <span class="preprocessor">#endif</span>
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Vše</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Třídy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Prostory jmen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funkce</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Proměnné</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Definice typů</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generováno út 7. čer 2011 22.33:39 pro projekt Editor Grafu programem&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>

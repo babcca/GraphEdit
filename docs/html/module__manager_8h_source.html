@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<title>Editor Grafu: Zdrojový soubor src/lib/module_manager.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body onload='searchBox.OnSelectItem(0);'>
+<!-- Generováno programem Doxygen 1.7.3 -->
+<script type="text/javascript"><!--
+var searchBox = new SearchBox("searchBox", "search",false,'Hledat');
+--></script>
+<div id="top">
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Editor Grafu</div>
+   <div id="projectbrief">Editor Grafu</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hlavní&#160;stránka</span></a></li>
+      <li><a href="namespaces.html"><span>Prostory&#160;jmen</span></a></li>
+      <li><a href="annotated.html"><span>Třídy</span></a></li>
+      <li class="current"><a href="files.html"><span>Soubory</span></a></li>
+      <li id="searchli">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Hledat" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Seznam&#160;souborů</span></a></li>
+    </ul>
+  </div>
+<div class="header">
+  <div class="headertitle">
+<h1>src/lib/module_manager.h</h1>  </div>
+</div>
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &lt;map&gt;</span>
+<a name="l00002"></a>00002 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00003"></a>00003 <span class="preprocessor">#include &quot;interfaces.h&quot;</span>
+<a name="l00007"></a>00007 <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ObjectType&gt;
+<a name="l00008"></a><a class="code" href="class_object_manager.html">00008</a> <span class="keyword">class </span><a class="code" href="class_object_manager.html">ObjectManager</a> {
+<a name="l00009"></a>00009 <span class="keyword">public</span>:
+<a name="l00010"></a>00010         <a class="code" href="class_object_manager.html">ObjectManager</a>() {}
+<a name="l00012"></a><a class="code" href="class_object_manager.html#a876b3d72c47788125320e6b4497a66b5">00012</a>         <span class="keyword">typedef</span> <span class="keyword">typename</span> std::map&lt;std::string, ObjectType *&gt;::iterator <a class="code" href="class_object_manager.html#a876b3d72c47788125320e6b4497a66b5" title="Iterator.">iterator</a>;
+<a name="l00014"></a><a class="code" href="class_object_manager.html#a5d33076b693b2091e139f693ed4162e0">00014</a>         <span class="keyword">typedef</span> <span class="keyword">typename</span> std::map&lt;std::string, ObjectType *&gt;::const_iterator <a class="code" href="class_object_manager.html#a5d33076b693b2091e139f693ed4162e0" title="Konstatni iterator.">const_iterator</a>;
+<a name="l00016"></a><a class="code" href="class_object_manager.html#af605166585515b5c9599b9b4d3717104">00016</a>         <span class="keyword">typedef</span> <span class="keyword">typename</span> std::pair&lt;std::string, ObjectType *&gt; <a class="code" href="class_object_manager.html#af605166585515b5c9599b9b4d3717104" title="Typ ulozenych dat.">data_type</a>;
+<a name="l00017"></a>00017 
+<a name="l00019"></a><a class="code" href="class_object_manager.html#aaeb5bfc101b42efc7e13ac6f0f6badde">00019</a>         <a class="code" href="class_object_manager.html#a876b3d72c47788125320e6b4497a66b5" title="Iterator.">iterator</a> <a class="code" href="class_object_manager.html#aaeb5bfc101b42efc7e13ac6f0f6badde" title="Iterator prvniho objekt.">begin</a>() { <span class="keywordflow">return</span> list.begin(); }
+<a name="l00021"></a><a class="code" href="class_object_manager.html#a63db5f9208836ea65bc022617626f90e">00021</a>         <a class="code" href="class_object_manager.html#a876b3d72c47788125320e6b4497a66b5" title="Iterator.">iterator</a> <a class="code" href="class_object_manager.html#a63db5f9208836ea65bc022617626f90e" title="Iterator posledniho objektu.">end</a>() { <span class="keywordflow">return</span> list.end(); }
+<a name="l00023"></a><a class="code" href="class_object_manager.html#a435c7de58846a87533fb5f7718966847">00023</a>         <a class="code" href="class_object_manager.html#a5d33076b693b2091e139f693ed4162e0" title="Konstatni iterator.">const_iterator</a> <a class="code" href="class_object_manager.html#a435c7de58846a87533fb5f7718966847" title="Konstatni iterator prvniho objektu.">begin</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> list.begin(); }
+<a name="l00025"></a><a class="code" href="class_object_manager.html#a2d5c1346ca03dad62eb1f1b9e7cb67d6">00025</a>         <a class="code" href="class_object_manager.html#a5d33076b693b2091e139f693ed4162e0" title="Konstatni iterator.">const_iterator</a> <a class="code" href="class_object_manager.html#a2d5c1346ca03dad62eb1f1b9e7cb67d6" title="Konstatni iterator posledniho objektu.">end</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> list.end(); }
+<a name="l00026"></a>00026         
+<a name="l00032"></a><a class="code" href="class_object_manager.html#aef707e25143d02ddd2985ba4d5a36f9c">00032</a>         <span class="keywordtype">void</span> <a class="code" href="class_object_manager.html#aef707e25143d02ddd2985ba4d5a36f9c" title="Prida obejekt do seznamu.">add</a>(ObjectType * <span class="keywordtype">object</span>) {
+<a name="l00033"></a>00033                 list.insert(<a class="code" href="class_object_manager.html#af605166585515b5c9599b9b4d3717104" title="Typ ulozenych dat.">data_type</a>(object-&gt;name, <span class="keywordtype">object</span>));
+<a name="l00034"></a>00034         }
+<a name="l00035"></a>00035         
+<a name="l00041"></a><a class="code" href="class_object_manager.html#a7ee29264f809fdb986e1f3e4557379d6">00041</a>         <a class="code" href="class_object_manager.html#a5d33076b693b2091e139f693ed4162e0" title="Konstatni iterator.">const_iterator</a> <a class="code" href="class_object_manager.html#a7ee29264f809fdb986e1f3e4557379d6" title="Ziska objekt podle jmena.">operator[] </a>(<span class="keyword">const</span> std::string &amp; name)<span class="keyword"> const </span>{
+<a name="l00042"></a>00042                 <span class="keywordflow">return</span> list.find(name);
+<a name="l00043"></a>00043         };
+<a name="l00044"></a>00044 
+<a name="l00048"></a><a class="code" href="class_object_manager.html#af54280b4017050628cbfad223ef4912c">00048</a>         <a class="code" href="class_object_manager.html#af54280b4017050628cbfad223ef4912c">~ObjectManager</a>() {
+<a name="l00049"></a>00049                 <a class="code" href="class_object_manager.html#a876b3d72c47788125320e6b4497a66b5" title="Iterator.">iterator</a> it = <a class="code" href="class_object_manager.html#aaeb5bfc101b42efc7e13ac6f0f6badde" title="Iterator prvniho objekt.">begin</a>();
+<a name="l00050"></a>00050                 <span class="keywordflow">while</span> (it != <a class="code" href="class_object_manager.html#a63db5f9208836ea65bc022617626f90e" title="Iterator posledniho objektu.">end</a>()) {
+<a name="l00051"></a>00051                         <span class="keyword">delete</span> it-&gt;second;
+<a name="l00052"></a>00052                         it-&gt;second = 0;
+<a name="l00053"></a>00053                         ++it;
+<a name="l00054"></a>00054                 }
+<a name="l00055"></a>00055         }
+<a name="l00056"></a>00056 <span class="keyword">private</span>:
+<a name="l00057"></a>00057         <span class="comment">/* Zakaz Kopirovani */</span>
+<a name="l00058"></a>00058         <a class="code" href="class_object_manager.html">ObjectManager</a>(<a class="code" href="class_object_manager.html">ObjectManager</a> &amp; obj) {};
+<a name="l00059"></a>00059         <a class="code" href="class_object_manager.html">ObjectManager</a> &amp; operator= (<span class="keyword">const</span> <a class="code" href="class_object_manager.html">ObjectManager</a> &amp; obj) {};
+<a name="l00060"></a>00060         std::map&lt;const std::string, ObjectType *&gt; list; 
+<a name="l00061"></a>00061 };
+<a name="l00062"></a>00062 
+<a name="l00076"></a><a class="code" href="class_module_manager.html">00076</a> <span class="keyword">class </span><a class="code" href="class_module_manager.html" title="Sparvce modului.">ModuleManager</a> {
+<a name="l00077"></a>00077 <span class="keyword">public</span>:
+<a name="l00078"></a>00078         <span class="keyword">typedef</span> <a class="code" href="class_object_manager.html">ObjectManager&lt;Interfaces::IExporter&gt;</a> <a class="code" href="class_object_manager.html">exporter_type</a>;
+<a name="l00079"></a>00079         <span class="keyword">typedef</span> <a class="code" href="class_object_manager.html">ObjectManager&lt;Interfaces::IImporter&gt;</a> <a class="code" href="class_object_manager.html">importer_type</a>;
+<a name="l00080"></a>00080         <span class="keyword">typedef</span> <a class="code" href="class_object_manager.html">ObjectManager&lt;Interfaces::IPlacement&gt;</a> <a class="code" href="class_object_manager.html">placement_type</a>;
+<a name="l00081"></a>00081         <span class="keyword">typedef</span> <a class="code" href="class_object_manager.html">ObjectManager&lt;Interfaces::IExtensions&gt;</a>  <a class="code" href="class_object_manager.html">extensions_type</a>;
+<a name="l00082"></a>00082         
+<a name="l00083"></a><a class="code" href="class_module_manager.html#a57fa10a838d5e27a81bd6f4e640e039b">00083</a>         <a class="code" href="class_object_manager.html">exporter_type</a> <a class="code" href="class_module_manager.html#a57fa10a838d5e27a81bd6f4e640e039b" title="Trida exporteru.">exporter</a>; 
+<a name="l00084"></a><a class="code" href="class_module_manager.html#a4750525b00415e8b8c02e9c9c499660c">00084</a>         <a class="code" href="class_object_manager.html">importer_type</a> <a class="code" href="class_module_manager.html#a4750525b00415e8b8c02e9c9c499660c" title="Trida importeru.">importer</a>; 
+<a name="l00085"></a><a class="code" href="class_module_manager.html#acf1bb28f8995e842fd665e461c71f6d1">00085</a>         <a class="code" href="class_object_manager.html">placement_type</a> <a class="code" href="class_module_manager.html#acf1bb28f8995e842fd665e461c71f6d1" title="Trida starajici se o rozlozeni vrcholu.">placement</a>; 
+<a name="l00086"></a><a class="code" href="class_module_manager.html#a190c792c10552962de3d1ff6b44446e2">00086</a>         <a class="code" href="class_object_manager.html">extensions_type</a> <a class="code" href="class_module_manager.html#a190c792c10552962de3d1ff6b44446e2" title="Trida starajici se o externi moduly.">extensions</a>; 
+<a name="l00087"></a>00087 };
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089 
+</pre></div></div>
+</div>
+<!--- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Vše</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Třídy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Prostory jmen</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Funkce</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Proměnné</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Definice typů</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<hr class="footer"/><address class="footer"><small>Generováno út 7. čer 2011 22.33:39 pro projekt Editor Grafu programem&#160;
+<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </small></address>
+</body>
+</html>
