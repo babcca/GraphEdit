@@ -1,19 +1,36 @@
 Garf
+kucharka 2 18 serie [polovicni hrany]
 Pouzit mou map (oproti STL Neni log n, ale konstatni)
 u  = 1
 e(1, 3)
 e(1, 4)
 e)1, 100000)
+class edge<typename Type> {
+	
+};
 
-edge {
+edge<directed> {
+	Uint id;
+	Node u, v;
+	virtual Node v(Node & U);
+	Gfx gfx;
 	
 }
+node<undirect> {
+	virtual Node next(Node & u);
+
+}
 node<directed> {
-	uint id;
+	Uint id;
 	vector<edge> edges;
+	Gfx gfx
+}
+
+Gfx {	
 	Position p;
 	Data data;
 }
+
 mymap<node, node>
 
 [u1']->[v2', u2', u3']
@@ -23,12 +40,59 @@ Pro hrany pozit kd-tree|bsp-tree
 
 <stack>
 <queue>
-template<typename Functor>
-DFS(Graph & graph, Functor f)
-template<typename Functor>
-BFS(Graph & graph, Functor f)
+//DFS<Typ /* Fronta|Zasobnik */>FS(Graph, u, f(Node))
+struct Graph {
+	template<typename Functor, typename Storrage>
+	FS(Node &u, Functor f) {
+		Stprrage stor;
+		f(u)
+		stor.push(u);
+		while(stor.pop(node)):
+			for e in node.edges:
+				Node v = e.v(u);
+				f(v);
+				stor.push(v)
+	}
+	template<typename Functor>
+	DFS(Node &u, Funktor f) {
+		FS<Queue<Node>>(u, f);
+	}
+	template<typename Functor>
+	BFS(Node &u, Funktor f) {
+		FS<Stack<Node>(u, f);
+	}
+
+typename FS<Sueue<Node>> BFS;
 
 
+pri barycentrickem kontrolovat krizeni hran (pamatovat si konfiguraci) (jednoduche pocitani [stejne ho musim mit], vygenerovat 3 a vybrat nejlepsi?
+[casova nerocnost:
+	N = V + E
+	It = #iteraci
+	struct PositonGenerator {
+		uint seed;
+		vector<Node &> data; 
+		PositionGenerator(uint seed_, uint V) : seed(seed_) {
+			data.resize(V);
+		}
+
+		void operator () (Node & u) {
+			Random x, y;
+			u.data.set_pos(x, y);
+			data.push(u.data);
+		}
+	}
+	PositionGenerator(Random()) p;
+	p.run(graph);
+	
+	barycentric(p.data, Iter);
+
+	p1 = pocet_krizeni(p.data);
+	//opakuj, vyber tu s mene
+			
+
+	
+		
 
 
 Pridat moznost nastaveni ukladanych informaci 
@@ -41,4 +105,4 @@ V E
 
 Pridavani informaci k IO na typ souboru (QStringList?)
 
-
+Co to takhle udelat kapinku evolucne? => Naucit se evolucni algoritmy :(
