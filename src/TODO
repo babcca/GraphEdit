@@ -54,15 +54,13 @@ struct Graph {
 				stor.push(v)
 	}
 	template<typename Functor>
-	DFS(Node &u, Funktor f) {
+	BFS(Node &u, Funktor f) {
 		FS<Queue<Node>>(u, f);
 	}
 	template<typename Functor>
-	BFS(Node &u, Funktor f) {
+	DFS(Node &u, Funktor f) {
 		FS<Stack<Node>(u, f);
 	}
-
-typename FS<Sueue<Node>> BFS;
 
 
 pri barycentrickem kontrolovat krizeni hran (pamatovat si konfiguraci) (jednoduche pocitani [stejne ho musim mit], vygenerovat 3 a vybrat nejlepsi?
